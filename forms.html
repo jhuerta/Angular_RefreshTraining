@@ -8,6 +8,25 @@
 </head>
 
 <body ng-app="workspace" ng-controller="FormsController as forms">
+
+
+<form name="reviewform" ng-submit="forms.AddReview()">  
+<blockquote>
+    <b>Stars: {{forms.review.stars}}</b>
+    {{forms.review.body}}
+    <cite>by: {{forms.review.author}}</cite>
+    
+</blockquote>
+    <select ng-model="forms.review.stars">
+        <option value="1">1 star</option>
+        <option value="3">2 star</option>
+        <option value="3">3 star</option>
+    </select>
+    <textarea ng-model="forms.review.body"></textarea>
+    <input type="email" ng-model="forms.review.author">
+    <input type="submit" value="Submit">
+
+</form>
     
 
     <script src="resources\libs\angular\js\angular.min.js"></script>

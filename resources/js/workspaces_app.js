@@ -6,6 +6,15 @@
 
     function formsController()
     {
+    	this.review = {};
+    	this.AddReview = function()
+    	{
+    		console.log(this.review.author);
+    		console.log(this.review.stars);
+    		console.log(this.review.body);
+
+    		this.review = {};
+    	}
     	
     }
 
