@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Workspaces</title>
+    <link rel="stylesheet" href="resources\libs\bootstrap\css\bootstrap.min.css">
+</head>
+
+<body ng-app="workspace">
+    <div ng-controller="EntityController as entities">
+        <div ng-repeat="entity in entities.Entities">
+            <hr>
+            <div>
+                Here one entity (visible or not)
+                <div ng-hide="!{{entity.Available}}">
+                    <div>{{entity.title}}</div>
+                    <div>{{entity.numberOfPeople}}</div>
+                    <div>Budget: {{entity.budget | currency}}</div>
+                    <div>{{entity.description}}</div>
+                    <div>Here a button (or not):
+                        <button class="btn btn-primary" ng-show="{{entity.canExecute}}">Submit</button>
+                    </div>
+                    <img ng-src="resources\img\{{entity.Icon}}" height="42" width="42"/>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr>
+    <div>
+    <h2>Filters</h2>
+    <div>Date: {{'1312312312312354' | date:'yyyy dd MM'}}</div>
+    <div>Uppercase: {{"lowercase" | uppercase}}</div>
+    <div>Uppercase: {{"UPPERCASE" | lowercase}}</div>
+    <div>LimitTo (text and ng-repeat) {{"12345689" | limitTo:5}}</div>
+    <div>OrderBy (ng-repeat)</div>
+    </div>
+    <hr>
+    <div>
+        <h3>SOME RANDOM TESTING</h3>
+        <div>Here an numeric expression: 4 + 6 = {{4 + 6}}</div>
+        <div>Here an text expression: 4 + 6 = {{"Hello " + "World!"}}</div>
+        <script src="resources\libs\angular\js\angular.min.js"></script>
+        <script src="resources\js\workspaces_app.js"></script>
+    </div>
+</body>
+
+</html>
